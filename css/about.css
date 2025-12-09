@@ -1,0 +1,445 @@
+/* ===== Base tokens (fallbacks if index.css doesn't define) ===== */
+:root{
+  --gold:#c7a34b;
+  --bg:#000; --fg:#fff; --panel:#0b0b0b; --line:#1f1f1f;
+  --wrap:1200px; --radius:22px;
+  --shadow-lg:0 30px 70px rgba(0,0,0,.45);
+  --shadow-md:0 18px 40px rgba(0,0,0,.35);
+}
+
+/* Simple container */
+.container{width:min(var(--wrap),100%);margin-inline:auto;padding-inline:24px}
+
+/* ========== HERO ========== */
+.about-hero {
+  position: relative;
+  margin-top: 0;              /* no blank gap */
+  height: min(90vh, 860px);   /* taller so it fills behind header + more space for image */
+  min-height: 600px;          /* bump the minimum so it doesn’t crop short */
+  background: var(--bg);
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;      /* keeps text lower, like Boden */
+}
+
+.about-hero__bg{
+  position:absolute; inset:0;
+  background: center/cover no-repeat var(--about-hero, url('/assets/about/about-hero.jpg'));
+  transform: scale(1.02);
+  will-change: transform;
+}
+
+.about-hero__grad{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.75) 100%);
+  mix-blend-mode: multiply;
+}
+.about-hero__noise{
+  position:absolute; inset:-10%;
+  background-image:url('/assets/noise.png');
+  opacity:.08; pointer-events:none;
+}
+.about-hero__sheen{
+  position:absolute; left:-40%; top:-40%; width:180%; height:180%;
+  background: radial-gradient(40% 40% at 50% 50%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%);
+  transform: rotate(8deg);
+  animation: sheen 12s linear infinite;
+  opacity:.35; pointer-events:none;
+}
+@keyframes sheen{
+  0%{transform:translateX(-10%) rotate(8deg)}
+  100%{transform:translateX(10%) rotate(8deg)}
+}
+
+.about-hero__inner {
+  position: relative;
+  height: 100%;
+  display: flex;              /* ✅ switch from grid to flex */
+  flex-direction: column;
+  align-items: center;        /* ✅ centers items horizontally */
+  justify-content: flex-end;  /* keep them lower */
+  padding: 0 24px 42px;
+  text-align: center;         /* ensures text is centered */
+}
+
+.eyebrow{
+  font: 600 13px/1.1 'Rajdhani', sans-serif;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:#fff; opacity:.85; margin-bottom:10px;
+}
+
+.about-hero__title{
+  font-family: 'Monsterrat', sans-serif;
+  font-weight: 800;
+  line-height: .95;
+  font-size: clamp(48px, 7.8vw, 92px);
+  color:#fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,.55);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Center the hero content block like Services (container width + auto margins) */
+.about-hero .about-hero__inner{
+  width: min(var(--wrap, 1200px), 100%);
+  margin-inline: auto;          /* ✅ centers the whole block */
+  padding: 0 24px 42px;
+  display: flex;                /* mimic Services flex column */
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;      /* text sits like Services (left inside centered block) */
+  text-align: left;             /* keep heading lines aligned cleanly */
+}
+
+/* Ensure the H1 doesn’t fight alignment */
+.about-hero .about-hero__title{
+  margin: 0;                    /* no auto margins pushing it */
+  text-align: left;
+}
+
+
+/* ========== WHITE OVERLAP PANEL ========== */
+.about-panel{
+  position: relative;
+  z-index: 2;
+  transform: translateY(-20px); /* overlap the hero */
+  margin-bottom: 24px;
+  padding: 0 24px;
+}
+.about-panel__inner{
+  width:min(1100px,100%);
+  margin-inline:auto;
+  background:#1a1a1a; /* dark grey panel */
+  color:#fff;         /* default text white */
+  border-radius: 26px;
+  box-shadow: var(--shadow-lg);
+  padding: clamp(22px, 4vw, 42px);
+}
+.about-panel__inner p{ 
+  font: 400 18px/1.7 'Rajdhani', sans-serif;
+  color:#fff; /* force paragraphs white */
+}
+
+.about-panel__inner p + p{ margin-top: 1rem; }
+
+/* ========== STORY BLOCK ========== */
+.about-section{ padding: clamp(36px,6vw,72px) 0; }
+.about-grid{
+  display:grid; gap: clamp(20px, 4vw, 40px);
+  grid-template-columns: 1.1fr .9fr;
+  align-items:center;
+}
+.about-copy h2{
+  font-family:'Monsterrat', sans-serif;
+  font-weight:800; font-size: clamp(28px, 4.2vw, 42px);
+  margin: 0 0 .3rem;
+}
+.about-copy p{ color:#ddd; line-height:1.7; margin: .4rem 0 1rem; }
+.bullets{ display:grid; gap:.35rem; padding-left:1.1rem }
+.bullets li{ color:#cfcfcf; list-style: disc; }
+.about-media img{
+  width:100%; height:auto; border-radius:16px; box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 960px){
+  .about-grid{ grid-template-columns: 1fr; }
+}
+
+/* ========== PROCESS INTEL ========== */
+.process-intel{ padding: 36px 0 8px; background: var(--panel); }
+.section-head{ text-align:center; margin:0 auto 22px; padding:0 24px; max-width: 880px;}
+.process-intel .section-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  text-align: center;
+  letter-spacing: .02em;
+  color: var(--gold, #c7a34b); /* gold */
+}
+.section-head p{ color:#bdbdbd; }
+
+.intel-grid{
+  width:min(var(--wrap),100%); margin:0 auto; padding: 0 24px 30px;
+  display:grid; gap:14px; grid-template-columns: repeat(4, 1fr);
+}
+.intel-card{
+  background:#111; border:1px solid var(--line); border-radius:16px; padding:18px 16px;
+}
+.ic-num{ font:700 12px/1 'Rajdhani', sans-serif; letter-spacing:.18em; opacity:.6; margin-bottom:4px }
+.intel-card h3{ font-weight:700; margin-bottom:6px }
+.intel-card p{ color:#cfcfcf; line-height:1.6 }
+@media (max-width: 980px){ .intel-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px){ .intel-grid{ grid-template-columns: 1fr; } }
+
+/* ========== STATS STRIP ========== */
+.stats-strip{ background:#0b0b0b; border-bottom:1px solid var(--line); padding: 24px 0; }
+.stats{ display:grid; grid-template-columns: repeat(4,1fr); gap:10px; align-items:center; }
+.stat{ text-align:center; padding:10px 8px }
+/* KPIs (numbers) */
+.kpi {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 40px);
+  color: #fff; /* back to white */
+}
+
+/* Labels under numbers */
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #bdbdbd; /* softer grey for contrast */
+  letter-spacing: .02em;
+}
+
+@media (max-width:760px){ .stats{ grid-template-columns: repeat(2,1fr); } }
+
+.stats-strip .section-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  text-align: center;
+  letter-spacing: .02em;
+  color: var(--gold, #c7a34b);
+  margin-bottom: 24px;
+}
+
+/* ========== PARTNERS ========== */
+/* AUTHORIZED PARTNERS STRIP */
+.partners--authorized {
+  padding: 48px 0;
+  background: #1a1a1a;   /* grey background */
+}
+
+.auth-head {
+  color: var(--gold, #c7a34b);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-logos {
+  width: min(var(--wrap, 1200px), 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+.auth-logos img {
+  max-height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+
+  /* Ensures any white box around logos blends into grey background */
+  background: transparent;
+  mix-blend-mode: multiply;   /* makes white backgrounds "disappear" */
+}
+
+/* Partners strip stays gray */
+.partners--authorized { padding:48px 0; background:#1a1a1a; }
+
+/* Logos: no blending, show real colors */
+.auth-logos img{
+  max-height:50px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+  background:transparent;     /* no forced bg */
+  mix-blend-mode:normal;      /* <— remove the issue */
+  filter:none;                /* ensure no global invert */
+}
+
+/* ========== SHOP TOUR STRIP ========== */
+/* ==== SHOP TOUR: 2x2 Grid ==== */
+.shop-tour{
+  padding: 10px 0 6px;
+  background: #000; /* keep page background */
+}
+
+.tour-grid{
+  width: min(var(--wrap, 1200px), 100%);
+  margin: 0 auto;
+  padding: 0 24px 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tour-card{
+  position: relative;
+  aspect-ratio: 16 / 10;            /* consistent card heights */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0b0b0b;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+.tour-card::after{                   /* subtle top/bottom fade for polish */
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,.18));
+  pointer-events:none;
+}
+
+.tour-card img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform .55s ease;
+}
+
+.tour-card:hover img{
+  transform: scale(1.06);
+}
+
+/* Stack on small screens */
+@media (max-width: 640px){
+  .tour-grid{ grid-template-columns: 1fr; }
+}
+
+/* ========== TESTIMONIALS / CTA ========== */
+.testimonials{ padding: 36px 0 6px }
+.quotes{ width:min(980px,100%); margin: 0 auto; display:grid; gap:14px; grid-template-columns: repeat(3,1fr); padding: 0 24px }
+.quote{ background:#111; border:1px solid var(--line); border-radius:16px; padding:18px }
+.quote p{ color:#ddd }
+.quote cite{ color:#9a9a9a; font-style:normal }
+@media (max-width:900px){ .quotes{ grid-template-columns: 1fr; } }
+
+.about-cta{ padding: 36px 24px 56px; text-align:center }
+.about-cta .btn{
+  display:inline-block; padding:.85rem 1.3rem; border-radius:12px;
+  background:linear-gradient(180deg, var(--gold), #a9892f);
+  color:#111; font-weight:800; letter-spacing:.04em;
+  box-shadow: 0 8px 28px rgba(199,163,75,.25);
+  transition: transform .2s ease;
+}
+.about-cta .btn:hover{ transform: translateY(-2px); }
+
+/* Authorized partners styling */
+.partners--authorized {
+  padding: 48px 0;
+  background: #000000ff;
+  margin-bottom: 60px; /* <— new spacing before the next section */
+}
+
+.partners--authorized .auth-head {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.8vw, 32px);
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: .02em;
+  color: var(--gold, #c7a34b);
+}
+
+/* flexible logo grid */
+.auth-logos{
+  width:min(var(--wrap,1200px),100%);
+  margin: 12px auto 0;
+  padding: 0 24px;
+  display:grid;
+  grid-template-columns: repeat(4, minmax(160px,1fr));
+  gap: 18px 28px;
+  align-items:center;
+  justify-items:center;
+}
+
+.auth-logos img{
+  max-width: 100%;
+  max-height: 64px;          /* keep rows even */
+  object-fit: contain;
+  display:block;
+  filter: none;               /* keep brand colors */
+  opacity:.95;
+}
+
+@media (max-width: 960px){
+  .auth-logos{ grid-template-columns: repeat(3, minmax(140px,1fr)); }
+}
+@media (max-width: 560px){
+  .auth-logos{ grid-template-columns: repeat(2, minmax(130px,1fr)); }
+}
+
+.contact-info {
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--panel-2);
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 800px;
+}
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info p {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+  color: var(--fg);
+  font-size: 1rem;
+}
+
+.contact-info .label {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.contact-info a {
+  color: var(--fg); /* keep phone number white */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--gold); /* only turns gold on hover */
+}
+
+/* 1) Keep generic hover OFF the pill button */
+.nav .nav-links a:hover:not(.wrap-btn) {
+  /* whatever your normal hover is */
+  color: #ffd; /* example */
+}
+
+/* 2) Fix wrap button stacking so shimmer doesn't cover text */
+.wrap-btn {
+  position: relative;
+  z-index: 0;            /* create a local stacking context */
+  isolation: isolate;
+  color: var(--gold) !important;  /* lock default text color */
+}
+
+.wrap-btn::before {
+  z-index: -1;           /* keep sheen behind text */
+}
+
+/* 3) Nuke any background-clip / transparent text inherited from global link hover */
+.wrap-btn,
+.wrap-btn:hover {
+  -webkit-text-fill-color: currentColor;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  mix-blend-mode: normal;
+}
+
+/* 4) Define its own hover so it stays readable */
+.wrap-btn:hover {
+  background: linear-gradient(180deg, var(--gold), #a9892f);
+  color: #111 !important;
+  border-color: transparent;
+  transform: translateY(-1px);
+}

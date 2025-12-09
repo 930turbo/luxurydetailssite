@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Luxury Details</title>
+
+    <!-- Fonts (same as index) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Global + page styles -->
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+
+    <!-- Shared components (relative from /pages/) -->
+    <script src="../components/header.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+    <!-- Page JS -->
+    <script src="/js/about.js" defer></script>
+</head>
+
+<body>
+    <!-- Header (injected) -->
+    <header id="site-header"></header>
+
+    <!-- IMAGE HERO (clean, no CTAs) -->
+    <section class="about-hero" aria-label="About Luxury Details" style="--about-hero:url('/assets/about/about-hero.jpg')">
+        <div class="about-hero__bg" aria-hidden="true">
+            <div class="about-hero__grad"></div>
+            <div class="about-hero__noise"></div>
+            <span class="about-hero__sheen"></span>
+        </div>
+
+        <div class="about-hero__inner">
+            <p class="eyebrow">ABOUT LUXURY DETAILS</p>
+            <h1 class="about-hero__title">
+                HISTORY &amp;<br />
+                EVOLUTION
+            </h1>
+        </div>
+    </section>
+
+    <!-- WHITE CONTENT PANEL (overlaps hero) -->
+    <section class="about-panel">
+        <div class="about-panel__inner">
+            <p><em>Founded in 2005 in Framingham, Massachusetts</em>, Luxury Details began as a small audio installation
+                shop built on high quality installs of the leading brands. That reputation quickly fueled growth and led
+                to the move
+                into a larger Southborough facility, where the company operates today.</p>
+
+            <p>Over the years, Luxury Details has expanded into a full-service automotive enhancement studio. The team
+                now provides custom audio, radar and laser systems, remote starters, tinting, wraps, paint protection
+                film, lighting, wheels, suspension, detailing, and more—all with the same meticulous attention to detail
+                that defined the shop from the beginning and holds true to the Luxury name.</p>
+
+            <p>As an authorized dealer for brands like Alpine, JL Audio, Focal, K40 Radar, and Escort, Luxury Details
+                combines industry-leading products with over two decades of expertise. Every project, whether a simple
+                upgrade or a complete transformation, is approached with professionalism, care, and passion.</p>
+
+            </p>
+        </div>
+    </section>
+
+    <section class="contact-info lux-panel">
+        <div class="contact-block">
+            <h3>Contact & Location</h3>
+
+            <p>
+                <span class="label">Address:</span><br>
+                251 Turnpike Rd<br>
+                Rear of Parking Lot next to Carnova<br>
+                Southborough, MA 01772
+            </p>
+
+            <p>
+                <span class="label">Phone:</span> <a href="tel:15086207321">508.620.7321</a><br>
+                <span class="label">Fax:</span> 508.405.1731
+            </p>
+
+            <p>
+                <span class="label">Hours:</span><br>
+                Monday – Friday: 9 AM – 5 PM<br>
+                Saturday: By Appointment Only
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PROCESS INTEL -->
+    <section class="process-intel">
+        <div class="container">
+            <div class="section-head">
+                <h2>Inside Our Process</h2>
+                <p>The Details That Matter</p>
+            </div>
+            <div class="intel-grid">
+                <article class="intel-card">
+                    <div class="ic-num">01</div>
+                    <h3>Consult</h3>
+                    <p>Every project begins with a one-on-one consultation. We take the time to understand your goals,
+                        your vehicle, and your vision, ensuring the plan is tailored to both your needs and
+                        expectations.</p>
+                </article>
+                <article class="intel-card">
+                    <div class="ic-num">02</div>
+                    <h3>Spec</h3>
+                    <p>Once we understand your vision, we define the exact specifications—selecting the right products,
+                        materials, and methods to ensure every detail aligns with performance, style, and long-term
+                        reliability.</p>
+                </article>
+                <article class="intel-card">
+                    <div class="ic-num">03</div>
+                    <h3>Install</h3>
+                    <p>Our team carries out the installation with precision and care, using proven techniques and
+                        meticulous craftsmanship. Every component is fitted cleanly and securely, ensuring seamless
+                        integration and lasting performance.</p>
+                </article>
+                <article class="intel-card">
+                    <div class="ic-num">04</div>
+                    <h3>Dial-In</h3>
+                    <p>After installation, we fine-tune every system for peak performance and flawless function. From
+                        calibration to final adjustments, this step ensures everything operates exactly as intended
+                        before your vehicle leaves the shop.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+        <div class="container">
+            <div class="section-head">
+                <h2>Our Results</h2>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="kpi">12+</div>
+                    <div class="label">Years experience</div>
+                </div>
+                <div class="stat">
+                    <div class="kpi">400+</div>
+                    <div class="label">Completed builds</div>
+                </div>
+                <div class="stat">
+                    <div class="kpi">0</div>
+                    <div class="label">Rattles / wiring faults</div>
+                </div>
+                <div class="stat">
+                    <div class="kpi">100%</div>
+                    <div class="label">Torque verified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS / AUTHORIZED RETAILERS -->
+    <section class="partners partners--authorized">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="auth-head">Authorized Retailer & Installer of:</h2>
+            </div>
+
+            <div class="logo-row auth-logos">
+                <img src="/assets/partners/alpine.png" alt="Alpine" />
+                <img src="/assets/partners/jl.png" alt="JL Audio" />
+                <img src="/assets/partners/focal.png" alt="Focal" />
+                <img src="/assets/partners/escort.png" alt="Escort" />
+                <img src="/assets/partners/python.png" alt="Python" />
+                <img src="/assets/partners/k40.png" alt="K40 Electronics" />
+                <img src="/assets/partners/avital.png" alt="Avital" />
+                <img src="/assets/partners/hertz.png" alt="Hertz" />
+                <img src="/assets/partners/audison.png" alt="Audison" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOP TOUR STRIP -->
+    <section class="shop-tour">
+        <div class="tour-grid">
+            <figure class="tour-card">
+                <img src="/assets/about/tour1.jpg" alt="Lift and alignment" />
+            </figure>
+            <figure class="tour-card">
+                <img src="/assets/about/tour2.jpg" alt="Clean wiring bench" />
+            </figure>
+            <figure class="tour-card">
+                <img src="/assets/about/tour3.jpg" alt="Detail bay" />
+            </figure>
+            <figure class="tour-card">
+                <img src="/assets/about/tour4.jpg" alt="Hardware and torque station" />
+            </figure>
+        </div>
+    </section>
+
+    <!-- Footer (injected) -->
+    <footer id="site-footer"></footer>
+</body>
+
+</html>

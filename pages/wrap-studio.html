@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luxury Wrap Studio | Luxury Details</title>
+  <meta name="description" content="Color change vinyl, stealth/texture finishes, chrome delete, and design wraps—installed in a sterile studio with OEM+ discipline." />
+
+  <!-- Fonts (match other pages) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <!-- Global + page styles -->
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/wrap-studio.css" />
+
+  <!-- Shared header/footer injectors -->
+  <script src="/components/header.js" defer></script>
+  <script src="/components/footer.js" defer></script>
+
+  <!-- Page JS -->
+  <script src="/js/wrap-studio.js" defer></script>
+</head>
+<body>
+  <!-- Header (injected) -->
+  <header id="site-header" class="site-header" aria-label="Primary"></header>
+
+  <!-- HERO -->
+  <section class="ws-hero" aria-label="Luxury Wrap Studio" style="--ws-hero:url('/assets/wrap/hero.png')">
+    <div class="ws-hero__bg" aria-hidden="true">
+      <div class="ws-hero__grad"></div>
+      <div class="ws-hero__noise"></div>
+      <span class="ws-hero__sheen"></span>
+    </div>
+
+    <div class="ws-hero__inner container">
+      <p class="eyebrow">Luxury Wrap Studio</p>
+      <h1>Color Change. Texture. <br> Stealth Protection.</h1>
+
+      <!-- Tabs (jump links) -->
+      <nav class="ws-tabs" aria-label="Sections">
+        <a href="#packages">Packages</a>
+        <a href="#finishes">Finishes</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#care">Care</a>
+        <a class="accent" href="#book">Book</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="ws-section">
+    <div class="container">
+      <header class="ws-head">
+        <h2>Wrap Packages</h2>
+        <p>Installed in a clean studio with mapped panels, tension control, wrapped edges where possible, and no blades on paint.</p>
+      </header>
+
+      <div class="ws-grid cards-4">
+        <article class="plan reveal">
+          <h3>Essentials</h3>
+          <ul>
+            <li>Front clip color change</li>
+            <li>Chrome delete &amp; badges</li>
+            <li>Edges tucked where feasible</li>
+            <li>Quick turnaround</li>
+          </ul>
+          <a href="#book" class="btn">Start Here</a>
+        </article>
+
+        <article class="plan reveal">
+          <h3>Full Color Change</h3>
+          <ul>
+            <li>Full exterior wrap (doors closed)</li>
+            <li>Inlays &amp; seams mapped</li>
+            <li>OEM-like finish, serviceable</li>
+            <li>Panel photos &amp; QC sheet</li>
+          </ul>
+          <a href="#book" class="btn">Book Consult</a>
+        </article>
+
+        <article class="plan reveal">
+          <h3>XPEL Stealth (Satin) Conversion</h3>
+          <ul>
+            <li>Factory color, stealth sheen</li>
+            <li>Texture-matched components</li>
+            <li>High-impact zones reinforced</li>
+            <li>Aftercare kit included</li>
+          </ul>
+          <a href="#book" class="btn">Go Stealth</a>
+        </article>
+
+        <article class="plan reveal">
+          <h3>Show / Track Car</h3>
+          <ul>
+            <li>Doors/hinges/returns (as spec’d)</li>
+            <li>Multi-material accents &amp; layers</li>
+            <li>Design/stripe templating</li>
+            <li>White-glove delivery</li>
+          </ul>
+          <a href="#book" class="btn">Design It</a>
+        </article>
+      </div>
+
+      <!-- Brands -->
+      <div class="brand-block reveal">
+        <p class="brand-eyebrow">Materials we trust</p>
+        <div class="brand-row">
+          <img src="/assets/wrap/3m.png" alt="3M" loading="lazy">
+          <img src="/assets/wrap/avery.png" alt="Avery Dennison" loading="lazy">
+          <img src="/assets/wrap/inoz.png" alt="Inozetek" loading="lazy">
+          <img src="/assets/wrap/kpmf.png" alt="KPMF" loading="lazy">
+          <img src="/assets/wrap/ora.png" alt="Orafol" loading="lazy">
+          <img src="/assets/wrap/hexis.png" alt="Hexis" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINISHES -->
+  <section id="finishes" class="ws-section alt">
+    <div class="container">
+      <header class="ws-head">
+        <h2>Finishes &amp; Textures</h2>
+        <p>Gloss, satin, matte, metallic, pearl, color-flip, and textured films. Ask for exact swatch books in-studio.</p>
+      </header>
+
+      <div class="swatches">
+        <!-- Use image swatches or CSS background-color; replace src as you load assets -->
+        <button class="swatch reveal" data-name="Gloss Onyx" aria-label="Gloss Onyx">
+          <img src="/assets/wrap/gloss.png" alt="Gloss White">
+          <span>Gloss</span>
+        </button>
+        <button class="swatch reveal" data-name="Satin Sandstorm" aria-label="Satin Sandstorm">
+          <img src="/assets/wrap/satin.png" alt="Satin Sandstorm">
+          <span>Satin</span>
+        </button>
+        <button class="swatch reveal" data-name="Matte Arctic" aria-label="Matte Arctic">
+          <img src="/assets/wrap/matte.png" alt="Matte Arctic">
+          <span>Matte</span>
+        </button>
+        <button class="swatch reveal" data-name="Color Flip Nebula" aria-label="Color Flip Nebula">
+          <img src="/assets/wrap/flip.png" alt="Color Flip Nebula">
+          <span>Color Flip</span>
+        </button>
+        <button class="swatch reveal" data-name="Brushed Titanium" aria-label="Brushed Titanium">
+          <img src="/assets/wrap/brush.png" alt="Brushed Titanium">
+          <span>Brushed</span>
+        </button>
+        <button class="swatch reveal" data-name="Forged Carbon" aria-label="Forged Carbon">
+          <img src="/assets/wrap/carbon.png" alt="Forged Carbon">
+          <span>Carbon</span>
+        </button>
+      </div>
+
+      <p class="swatch-tip reveal">Tip: click any swatch to copy its name for your inquiry.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="ws-section">
+    <div class="container">
+      <header class="ws-head">
+        <h2>Studio Gallery</h2>
+        <p>Recent conversions and details. More in the full gallery.</p>
+      </header>
+
+      <div class="ws-masonry">
+        <img class="reveal" src="/assets/wrap/01.jpg" alt="Wrap gallery 1">
+        <img class="reveal" src="/assets/wrap/02.jpg" alt="Wrap gallery 2">
+        <img class="reveal" src="/assets/wrap/03.jpg" alt="Wrap gallery 3">
+        <img class="reveal" src="/assets/wrap/04.jpg" alt="Wrap gallery 4">
+        <img class="reveal" src="/assets/wrap/05.jpg" alt="Wrap gallery 5">
+        <img class="reveal" src="/assets/wrap/06.jpg" alt="Wrap gallery 6">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="ws-section alt">
+    <div class="container">
+      <header class="ws-head">
+        <h2>FAQ</h2>
+        <p>Common questions about vinyl wraps and our studio process.</p>
+      </header>
+
+      <div class="faq">
+        <details class="reveal">
+          <summary>How long does a full color change take?</summary>
+          <p>Typical full wraps are 3–5 days including prep, install, post-heat, and QC. Show-car or door-returns add time.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you cut on the paint?</summary>
+          <p>No. We template, pre-trim, use knifeless tape where needed, and wrap edges when feasible.</p>
+        </details>
+        <details class="reveal">
+          <summary>How long will it last?</summary>
+          <p>Most premium films are rated 5–7 years on vertical surfaces, less on horizontal. Garage-kept and coated wraps last longer.</p>
+        </details>
+        <details class="reveal">
+          <summary>Can it be removed?</summary>
+          <p>Yes—proper install means clean removal with heat, leaving OEM paint protected underneath.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section id="care" class="ws-section">
+    <div class="container">
+      <header class="ws-head">
+        <h2>Care &amp; Maintenance</h2>
+        <p>Let it cure 24 hours. Hand-wash with pH-neutral soap, no harsh chemicals. Microfiber only. Avoid automatic brushes.</p>
+      </header>
+
+      <ul class="care-list">
+        <li class="reveal">Use a dedicated wrap detailer or ceramic specifically for vinyl.</li>
+        <li class="reveal">Bug/tar: soften with warm water and a gentle citrus-safe product.</li>
+        <li class="reveal">Avoid pressure-washing close-up on edges and seams.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="ws-section alt">
+    <div class="container">
+      <header class="ws-head">
+        <h2>Book the Studio</h2>
+        <p>Tell us your color and finish—we’ll spec, schedule, and deliver.</p>
+      </header>
+      <div class="ws-cta">
+        <a class="btn" href="/pages/contact.html">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (injected) -->
+  <footer id="site-footer" class="site-footer" aria-label="Footer"></footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+:root{
+  --gold:#c7a34b; --bg:#000; --fg:#fff;
+  --panel:#0b0b0b; --panel-2:#121212; --line:#1f1f1f;
+  --wrap:1200px; --radius:22px;
+  --shadow-lg:0 30px 70px rgba(0,0,0,.45);
+  --shadow-md:0 18px 40px rgba(0,0,0,.35);
+}
+
+html{ scroll-behavior:smooth; }
+.container{ width:min(var(--wrap),100%); margin-inline:auto; padding-inline:24px; }
+
+/* ===== HERO (match About/Services size & effects) ===== */
+.gal-hero{
+  position:relative; margin-top:0;
+  height:min(90vh, 860px); min-height:600px;
+  background:var(--bg); overflow:hidden; isolation:isolate;
+  display:flex; align-items:flex-end;
+}
+.gal-hero__bg{
+  position:absolute; inset:0;
+  background:center/cover no-repeat var(--gal-hero, url('/assets/gallery/hero.jpg'));
+  transform:scale(1.02); will-change:transform;
+}
+.gal-hero__grad{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.75) 100%);
+  mix-blend-mode:multiply;
+}
+.gal-hero__noise{ position:absolute; inset:-10%; background-image:url('/assets/noise.png'); opacity:.08; pointer-events:none; }
+.gal-hero__sheen{
+  position:absolute; left:-40%; top:-40%; width:180%; height:180%;
+  background:radial-gradient(40% 40% at 50% 50%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%);
+  transform:rotate(8deg); animation:sheen 12s linear infinite; opacity:.35; pointer-events:none;
+}
+@keyframes sheen{ 0%{transform:translateX(-10%) rotate(8deg)} 100%{transform:translateX(10%) rotate(8deg)} }
+
+
+/* move hero text + pills UP */
+.gal-hero__inner{
+  position:relative;
+  z-index:1;                      /* ensure above bg layers */
+  width:min(var(--wrap),100%);
+  margin-inline:auto;
+  padding:0 24px 42px;
+
+  display:flex; flex-direction:column;
+  justify-content:flex-end; align-items:flex-start; text-align:left;
+
+  /* 👇 lift the whole block up (responsive) */
+  transform: translateY(calc(-1 * clamp(5px, 3vh, 220px)));
+  will-change: transform;
+}
+
+/* tame the lift on short viewports / mobile */
+@media (max-height: 700px){
+  .gal-hero__inner{ transform: translateY(-64px); }
+}
+@media (max-width: 560px){
+  .gal-hero__inner{
+    padding: 0 20px 28px;
+    transform: translateY(-48px);
+  }
+}
+
+.eyebrow{
+  font:600 13px/1.1 'Rajdhani',sans-serif;
+  letter-spacing:.18em; text-transform:uppercase; color:#fff; opacity:.85; margin-bottom:10px;
+}
+.gal-hero h1{
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  line-height:.95; font-size:clamp(48px,7.8vw,92px); color:#fff;
+  text-shadow:0 10px 30px rgba(0,0,0,.55); margin:0;
+}
+
+/* Pills (same style as Services) + extra spacing from title */
+.gal-tabs {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: clamp(1rem, 2.5vw, 2.5rem);
+  justify-content: flex-start;  /* ✅ line up left with hero text */
+}
+
+.gal-tabs .pill{
+  font:700 13px/1 'Rajdhani',sans-serif; letter-spacing:.12em; text-transform:uppercase;
+  color:#eaeaea; padding:.55rem .75rem; border:1px solid rgba(255,255,255,.18);
+  border-radius:999px; transition:background .2s ease, transform .2s ease, color .2s ease;
+  backdrop-filter:blur(6px); background:rgba(0,0,0,.25);
+}
+.gal-tabs .pill:hover, .gal-tabs .pill.active{
+  background:linear-gradient(180deg, var(--gold), #a9892f); color:#111; transform:translateY(-2px);
+}
+
+/* ===== Section ===== */
+.gal-section{ padding:48px 0; background:#000; }
+.gal-head{ text-align:left; margin-bottom:18px; }
+.gal-head h2{
+  font-family:'Montserrat',sans-serif; font-weight:700; color:var(--gold);
+  font-size:clamp(24px,3vw,34px);
+}
+.gal-head p{ font-family:'Rajdhani',sans-serif; font-weight:400; color:#cfcfcf; max-width:800px; }
+
+/* ===== Masonry ===== */
+.gal-masonry{ column-count:3; column-gap:14px; }
+@media (max-width:980px){ .gal-masonry{ column-count:2; } }
+@media (max-width:560px){ .gal-masonry{ column-count:1; } }
+
+.gal-item{
+  break-inside:avoid; background:#111; border:1px solid var(--line);
+  border-radius:16px; overflow:hidden; box-shadow:var(--shadow-md);
+  margin:0 0 14px; transform:translateY(10px); opacity:0; /* for reveal */
+}
+.gal-item img{ width:100%; height:auto; display:block; transform:scale(1.02); transition:transform .55s ease; }
+.gal-item:hover img{ transform:scale(1.06); }
+.gal-item figcaption{
+  padding:12px 14px; color:#dcdcdc; font-family:'Rajdhani',sans-serif; font-size:15px;
+}
+
+/* CTA */
+.gal-cta{ text-align:center; margin-top:18px; }
+.btn{
+  display:inline-block; padding:.9rem 1.3rem; border-radius:12px;
+  background:linear-gradient(180deg, var(--gold), #a9892f); color:#111;
+  font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:.04em;
+  box-shadow:0 8px 28px rgba(199,163,75,.25); transition:transform .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+/* Header behavior (same hooks) */
+.site-header.scrolled{ backdrop-filter:blur(8px); background:rgba(0,0,0,.35); transition:background .3s ease, backdrop-filter .3s ease; }
+.site-header.hide{ transform:translateY(-100%); transition:transform .3s ease; }
+
+/* Generic reveal helper (used if JS adds .revealed) */
+.reveal{ opacity:0; transform:translateY(10px); }
+.reveal.revealed{ opacity:1; transform:none; transition:transform .5s ease, opacity .5s ease; }
+
+.site-footer {
+  background:#0b0b0b;
+  border-top:1px solid var(--line);
+  padding: 28px 0;
+}
+
+.footer-inner {
+  width:min(var(--wrap),100%);
+  margin:0 auto;
+  padding:0 24px;
+  display:grid;
+  gap:14px;
+  justify-items:center;
+  text-align:center;
+}
+
+.f-brand .brand {
+  font-family: 'Lobster', cursive; /* fun script for brand */
+  font-size:1.6rem;
+  color:var(--fg);
+}
+.f-brand .tag { color:#9a9a9a; font-family:'Rajdhani',sans-serif; }
+
+.f-nav { display:flex; gap:20px; flex-wrap:wrap; }
+.f-nav a { font-family:'Rajdhani',sans-serif; color:#cfcfcf; }
+.f-nav a:hover { color:var(--gold); }
+
+.legal { color:#9a9a9a; font-family:'Rajdhani',sans-serif; }
+.legal strong { font-weight:700; }
+
+/* Smooth slide for header */
+#site-header{
+  transition: transform .28s ease, opacity .28s ease;
+  will-change: transform;
+}
+#site-header.hide{
+  transform: translateY(-100%);
+  opacity: .98;           /* optional */
+  pointer-events: none;   /* optional */
+}

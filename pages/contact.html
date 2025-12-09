@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Luxury Details — Contact</title>
+    <meta name="description" content="Contact Luxury Details for builds, detailing, wheels, aero, and track-prep." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Montserrat:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Lobster&display=swap"
+        rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/css/contact.css" />
+    <!-- Shared site CSS -->
+    <link rel="stylesheet" href="/css/index.css" />
+    <!-- Leaflet (map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <!-- Header (injected) -->
+    <header id="site-header" class="site-header" aria-label="Main Navigation">
+        <nav class="nav">
+            <a class="brand" href="/"><span>Luxury</span> Details</a>
+
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/services.html">Services</a></li>
+                <li><a href="/pages/gallery.html">Gallery</a></li>
+                <li class="wrap-item">
+                    <a href="/pages/wrap-studio.html" class="wrap-btn">Luxury Wrap Studio</a>
+                </li>
+                <li><a href="/pages/contact.html" class="cta-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="contact-hero" aria-label="Contact hero">
+        <div class="contact-hero__bg"></div>
+        <div class="contact-hero__grad"></div>
+        <div class="contact-hero__noise"></div>
+        <div class="contact-hero__sheen"></div>
+
+        <div class="contact-hero__inner container">
+            <span class="eyebrow">Plan Your Project</span>
+            <h1>Contact</h1>
+            <p class="hero-sub">Questions, quotes, or a build consult—reach out and we’ll get you dialed.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <main class="contact-section">
+        <div class="container contact-grid">
+            <!-- Left: Info + Form -->
+            <section class="contact-left">
+                <!-- Info block -->
+                <div class="contact-info card">
+                    <h2>Visit & Contact</h2>
+
+                    <dl class="info-grid">
+                        <div>
+                            <dt>Address</dt>
+                            <dd>
+                                251 Turnpike Rd<br>
+                                Rear of Parking Lot next to Carnova<br>
+                                Southborough, MA 01772
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt>Phone</dt>
+                            <dd><a href="tel:15086207321">508.620.7321</a></dd>
+                        </div>
+
+                        <div>
+                            <dt>Fax</dt>
+                            <dd>508.405.1731</dd>
+                        </div>
+
+                        <div>
+                            <dt>Hours</dt>
+                            <dd>Mon–Fri 9–5 • Sat by appointment</dd>
+                        </div>
+                    </dl>
+
+                    <div class="quick-links">
+                        <a class="btn" href="https://maps.google.com/?q=251+Turnpike+Rd,+Southborough,+MA+01772"
+                            target="_blank" rel="noopener">Open in Maps</a>
+                        <a class="btn btn-ghost" href="/pages/services.html">Explore Services</a>
+                    </div>
+                </div>
+
+                <!-- Contact form -->
+                <form class="contact-form card" id="contactForm" method="POST" action="/mail.php" novalidate>
+                    <input type="hidden" name="formType" value="contact" />
+                    <h2>Book a Consultation</h2>
+                    <p class="muted">Tell us about your car and goals—performance, finish, or a full build.</p>
+
+                    <div class="form-grid">
+                        <label class="field">
+                            <span>Name*</span>
+                            <input type="text" name="name" autocomplete="name" required />
+                            <small class="err">Please enter your name.</small>
+                        </label>
+
+                        <label class="field">
+                            <span>Email*</span>
+                            <input type="email" name="email" autocomplete="email" required />
+                            <small class="err">Please enter a valid email.</small>
+                        </label>
+
+                        <label class="field">
+                            <span>Phone</span>
+                            <input type="tel" name="phone" autocomplete="tel" />
+                            <small class="err" data-opt>Optional</small>
+                        </label>
+
+                        <label class="field">
+                            <span>Subject*</span>
+                            <input type="text" name="subject" required />
+                            <small class="err">Please enter a subject.</small>
+                        </label>
+
+                        <label class="field field-full">
+                            <span>Service Interest</span>
+                            <select name="service">
+                                <option value="">Select an option</option>
+                                <option>Detail & Protection</option>
+                                <option>Wheels & Fitment</option>
+                                <option>Aero & Track Prep</option>
+                                <option>Performance Mods</option>
+                                <option>General Question</option>
+                            </select>
+                        </label>
+
+                        <label class="field field-full">
+                            <span>Message*</span>
+                            <textarea name="message" rows="6" required
+                                placeholder="Car, year, goals, timeline…"></textarea>
+                            <small class="err">Please share a short message.</small>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn" id="submitBtn" type="submit">Send Message</button>
+                        <p class="tiny muted">We respond within one business day.</p>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Right: Map -->
+            <aside class="contact-map card">
+                <div id="contactMap" data-lat="42.291262" data-lng="-71.538801"
+                    data-label="Luxury Details — 251 Turnpike Rd" aria-label="Map to Luxury Details"></div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer (injected) -->
+    <footer id="site-footer"></footer>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/js/contact.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+</body>
+
+</html>

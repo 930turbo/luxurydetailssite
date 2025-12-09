@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luxury Details — Gallery</title>
+  <meta name="description" content="Luxury Details gallery of builds, details, track prep, and more." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Lobster&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/css/gallery.css" />
+  <!-- Shared header/footer CSS (if you have one) -->
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+  <!-- Header (injected) -->
+  <header id="site-header" class="site-header" aria-label="Main Navigation">
+  <nav class="nav">
+    <a class="brand" href="/"><span>Luxury</span> Details</a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/services.html">Services</a></li>
+      <li><a href="/pages/gallery.html">Gallery</a></li>
+      <li class="wrap-item">
+        <a href="/pages/wrap-studio.html" class="wrap-btn">Luxury Wrap Studio</a>
+      </li>
+      <li><a href="/pages/contact.html" class="cta-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- HERO -->
+  <section class="gal-hero" aria-label="Gallery hero">
+    <div class="gal-hero__bg"></div>
+    <div class="gal-hero__grad"></div>
+    <div class="gal-hero__noise"></div>
+    <div class="gal-hero__sheen"></div>
+
+    <div class="gal-hero__inner container">
+      <span class="eyebrow">Our Work</span>
+      <h1>Gallery</h1>
+
+      <!-- Category pills -->
+      <nav class="gal-tabs" aria-label="Gallery filters">
+        <a href="#all" data-filter="*" class="pill active">All</a>
+        <a href="#builds" data-filter="[data-cat*='builds']" class="pill">Builds</a>
+        <a href="#detail" data-filter="[data-cat*='detail']" class="pill">Detail</a>
+        <a href="#wheels" data-filter="[data-cat*='wheels']" class="pill">Wheels</a>
+        <a href="#track" data-filter="[data-cat*='track']" class="pill">Track</a>
+        <a href="#aero" data-filter="[data-cat*='aero']" class="pill">Aero</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <main class="gal-section">
+    <div class="container">
+      <header class="gal-head">
+        <h2>Featured Work</h2>
+        <p>Selections from recent projects — from paint correction and film to aero, wheels, and track-prep setups.</p>
+      </header>
+
+      <!-- Masonry -->
+      <div id="galleryMasonry" class="gal-masonry">
+        <!-- Each item needs data-cat for filtering -->
+        <figure class="gal-item reveal" data-cat="builds wheels">
+          <img src="/assets/services/per4.jpg" alt="Widebody build on custom wheels" loading="lazy">
+          <figcaption>GT build on forged wheels</figcaption>
+        </figure>
+
+        <figure class="gal-item reveal" data-cat="detail">
+          <img src="/assets/services/audio1.jpg" alt="Paint correction and ceramic coat" loading="lazy">
+          <figcaption>Paint correction + ceramic</figcaption>
+        </figure>
+
+        <figure class="gal-item reveal" data-cat="track aero">
+          <img src="/assets/services/radar2.jpg" alt="Track setup with aero package" loading="lazy">
+          <figcaption>Track setup + aero</figcaption>
+        </figure>
+
+        <figure class="gal-item reveal" data-cat="wheels">
+          <img src="/assets/services/ppf1.jpg" alt="Close-up of forged wheel fitment" loading="lazy">
+          <figcaption>Forged fitment detail</figcaption>
+        </figure>
+
+        <figure class="gal-item reveal" data-cat="detail">
+          <img src="/assets/services/per2.jpg" alt="Interior leather reconditioning" loading="lazy">
+          <figcaption>Interior reconditioning</figcaption>
+        </figure>
+
+        <figure class="gal-item reveal" data-cat="builds track">
+          <img src="/assets/services/recent3.jpg" alt="Track-prepped chassis in pit lane" loading="lazy">
+          <figcaption>Pit lane prep</figcaption>
+        </figure>
+
+        <!-- Add as many as you want following the same pattern -->
+      </div>
+
+      <!-- CTA -->
+      <div class="gal-cta">
+        <a class="btn" href="/pages/contact.html">Book a Consultation</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (injected) -->
+  <footer id="site-footer"></footer>
+
+  <!-- JS -->
+  <script src="/js/gallery.js" defer></script>
+  <script src="/js/header.js" defer></script>
+  <script src="../components/footer.js" defer></script>
+</body>
+</html>
